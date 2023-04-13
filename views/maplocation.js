@@ -1,7 +1,7 @@
-const root = document.querySelector('body');
+const root = document.getElementById('root');
 const maplocationDiv = document.createElement('div');
 
-let countries = [
+export let countries = [
     { "name": "Afghanistan", "description": 'A landlocked country located at the crossroads of Central Asia and South Asia. Referred to as the Heart of Asia.', "maplocation": 'https://www.cia.gov/the-world-factbook/static/a2affec831a70bd5fe6a80b72a6931d2/96e12/AF-locator-map.jpg', "code": "AF", capital: "Kabul",picture:'https://media.discordapp.net/attachments/1059949060116725820/1069279339117551706/1200px-Stark_contrasts_in_Afghanistan_-_080907-F-0168M-071.jpg?width=1009&height=670' },
     { "name": "Albania", "description": 'An independent country in Southeastern Europe, with an area of 28,748 square kilometres (11,100 sq mi).', "maplocation": 'https://www.cia.gov/the-world-factbook/static/3f9e58901527c6182cf4bd70bc7fe93b/3f1ef/AL-locator-map.jpg', "code": "AL", capital: "Tirana", picture: 'https://media.discordapp.net/attachments/1059949060116725820/1069293793024680026/q70.png?width=995&height=670' },
     { "name": "Algeria", "description": 'The largest country in Africa. It is part of the Maghreb region.', "maplocation": 'https://www.cia.gov/the-world-factbook/static/9e73b6c573e72d85301afe3ba1afaffb/d2034/AG-locator-map.jpg', "code": "DZ", capital: "Algiers", picture:'https://media.discordapp.net/attachments/1059949060116725820/1069294305933533216/1200px-SantaCruz_Oran_Algeria.png?width=1191&height=670' },

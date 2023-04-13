@@ -1,6 +1,4 @@
-import { html, render } from "../node_modules/lit-html/lit-html.js"
-
-const root = document.querySelector('body');
+const root = document.getElementById('root');
 
 const countries = [
     {"name":"Afghanistan","code":"AF","id":1},
@@ -203,15 +201,21 @@ const countries = [
 ];
 
 const capitalsDiv = document.createElement('div');
-export function flagsPage(){
+export function flagsabcdPage(){
     root.replaceChildren();
     root.appendChild(capitalsDiv);
 
     capitalsDiv.innerHTML = `
-    <h3 id = "name">Which country does this flag belong to?</h3>
-    <img id = "flag"/>
-    <input id = "capitalInput"></input>
-    <span id = "streak">Streak: 0</span>`;
+    <div style='color: rgb(51,119,255)'>
+    <h3 id = "name"></h3>
+    <div>
+    <button id = "flag1"><img id='flagimg1'/></button>
+    <button id = "flag2"><img id='flagimg2'/></button>
+    <button id = "flag3"><img id='flagimg3'/></button>
+    <button id = "flag4"><img id='flagimg4'/></button>
+    </div>
+    <div id = "streak">Streak: 0</div>
+    </div>`;
 
     let streak = 0;
 
@@ -219,24 +223,45 @@ export function flagsPage(){
     
     function eventListener(){
         let country = countries[Math.floor(Math.random() * countries.length)];
-        
-        document.getElementById("flag").src = `../flags/${country.code}.png`;
-        document.getElementById("flag").style.height = `60px`;
-        document.getElementById("flag").style.width = `100px`;
-        document.getElementById("streak").innerText = `Streak: ${streak}`;
+        let wrongCountryArr = [];
+        wrongCountryArr[0] = countries[Math.floor(Math.random() * countries.length)];
+        wrongCountryArr[1] = countries[Math.floor(Math.random() * countries.length)];
+        wrongCountryArr[2] = countries[Math.floor(Math.random() * countries.length)];
 
+        let correctCountryPosition = Math.ceil(Math.random() * 4)
+        let wrongArr = [1,2,3,4]
+        wrongArr=wrongArr.filter(function (value) {
+            return value !== correctCountryPosition;
+        });
+        document.getElementById(`name`).innerText=`${country.name}`
+        document.getElementById(`flagimg${correctCountryPosition}`).src = `../flags/${country.code}.png`;
+        document.getElementById(`flagimg${correctCountryPosition}`).style.height = `60px`;
+        document.getElementById(`flagimg${correctCountryPosition}`).style.width = `100px`;
 
-        const capitalsInput = document.getElementById("capitalInput");
-        let myListener;
-        if(country.name2==undefined) country.name2 = country.name;
-        capitalsInput.addEventListener("input", myListener = (event) => {
-        if(capitalsInput.value.toLowerCase() == country["name"].toLowerCase() || capitalsInput.value.toLowerCase() == country["name2"].toLowerCase()){
-            event.preventDefault();
-            streak++;
-            capitalsInput.value = "";
-            capitalsInput.removeEventListener('input', myListener);
-            eventListener()
+        for(let i=0;i<3;i++){
+        document.getElementById(`flagimg${wrongArr[i]}`).src = `../flags/${wrongCountryArr[i].code}.png`;
+        document.getElementById(`flagimg${wrongArr[i]}`).style.height = `60px`;
+        document.getElementById(`flagimg${wrongArr[i]}`).style.width = `100px`;
         }
-    });
-    }
-};
+        document.getElementById("streak").innerText = `Streak: ${streak}`;
+        flag1.onclick = () => {
+            if(`flag${correctCountryPosition}` == flag1.id){
+                streak++;eventListener()
+            }else{streak=0;document.getElementById("streak").innerText = `Streak: ${streak}`;}
+        }
+        flag2.onclick = () => {
+            if(`flag${correctCountryPosition}` == flag2.id){
+                streak++;eventListener()
+            }else{streak=0;document.getElementById("streak").innerText = `Streak: ${streak}`;}
+        }
+        flag3.onclick = () => {
+            if(`flag${correctCountryPosition}` == flag3.id){
+                streak++;eventListener()
+            }else{streak=0;document.getElementById("streak").innerText = `Streak: ${streak}`;}
+        }
+        flag4.onclick = () => {
+            if(`flag${correctCountryPosition}` == flag4.id){
+                streak++;eventListener()
+            }else{streak=0;document.getElementById("streak").innerText = `Streak: ${streak}`;}
+        }
+}}

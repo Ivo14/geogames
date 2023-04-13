@@ -1,12 +1,20 @@
 import page from "./node_modules/page/page.mjs"
 import { homePage } from "./views/home.js";
 import { capitalsPage } from "./views/capitals.js";
-import { flagsPage } from "./views/flag.js";
+import { flagsPage } from "./views/flags.js";
+import { flagsabcdPage } from "./views/flagsabcd.js"
 import { descriptionPage } from "./views/description.js"
 import { maplocationPage } from "./views/maplocation.js"
+import { scramblePage } from "./views/scramble.js"
+import { hangmanPage } from "./views/hangman.js"
+import { trueorfalsePage } from "./views/trueorfalse.js"
 page('/',homePage);
 page('/capitals',capitalsPage);
-page('/flag',flagsPage)
+page('/flags',flagsPage)
+page('/flagsabcd',flagsabcdPage)
 page('/description',descriptionPage)
 page('/maplocation',maplocationPage)
+page('/scramble',scramblePage)
+page('/hangman',hangmanPage)
+page('/trueorfalse',trueorfalsePage)
 page.start();

@@ -1,6 +1,6 @@
-const root = document.querySelector('body');
+const root = document.getElementById('root');
 
-let countries = [
+export const countries = [
     {"name":"Afghanistan","capital":"Kabul"},
     {"name":"Albania","capital":"Tirana"},
     {"name":"Algeria","capital":"Algiers"},
@@ -40,9 +40,9 @@ let countries = [
     {"name":"Colombia","capital":"Bogota"},
     {"name":"Comoros","capital":"Moroni"},
     {"name":"Congo","capital":"Brazzaville"},
-    {"name":"Congo, Democratic Republic of the Congo","capital":"Kinshasa"},
+    {"name":"Democratic Republic of the Congo","capital":"Kinshasa"},
     {"name":"Costa Rica","capital":"San Jose"},
-    {"name":"Cote D'Ivoire","capital":"Yamoussoukro"},
+    {"name":"Ivory coast","capital":"Yamoussoukro"},
     {"name":"Croatia","capital":"Zagreb"},
     {"name":"Cuba","capital":"Havana"},
     {"name":"Cyprus","capital":"Nicosia"},
@@ -79,7 +79,7 @@ let countries = [
     {"name":"Iceland","capital":"Reykjavik"},
     {"name":"India","capital":"New Delhi"},
     {"name":"Indonesia","capital":"Jakarta"},
-    {"name":"Iran, Islamic Republic of","capital":"Tehran"},
+    {"name":"Iran","capital":"Tehran"},
     {"name":"Iraq","capital":"Baghdad"},
     {"name":"Ireland","capital":"Dublin"},
     {"name":"Israel","capital":"Jerusalem"},
@@ -90,8 +90,8 @@ let countries = [
     {"name":"Kazakhstan","capital":"Astana"},
     {"name":"Kenya","capital":"Nairobi"},
     {"name":"Kiribati","capital":"Tarawa"},
-    {"name":"Korea, Democratic People's Republic of","capital":"Pyongyang"},
-    {"name":"Korea, Republic of","capital":"Seoul"},
+    {"name":"North Korea","capital":"Pyongyang"},
+    {"name":"South Korea","capital":"Seoul"},
     {"name":"Kosovo","capital":"Pristina"},
     {"name":"Kuwait","capital":"Kuwait City"},
     {"name":"Kyrgyzstan","capital":"Bishkek"},
@@ -104,7 +104,7 @@ let countries = [
     {"name":"Liechtenstein","capital":"Vaduz"},
     {"name":"Lithuania","capital":"Vilnius"},
     {"name":"Luxembourg","capital":"Luxembourg"},
-    {"name":"Macedonia, the Former Yugoslav Republic of","capital":"Skopje"},
+    {"name":"Macedonia","capital":"Skopje"},
     {"name":"Madagascar","capital":"Antananarivo"},
     {"name":"Malawi","capital":"Lilongwe"},
     {"name":"Malaysia","capital":"Kuala Lumpur"},
@@ -115,8 +115,8 @@ let countries = [
     {"name":"Mauritania","capital":"Nouakchott"},
     {"name":"Mauritius","capital":"Port Louis"},
     {"name":"Mexico","capital":"Mexico City"},
-    {"name":"Micronesia, Federated States of","capital":"Palikir"},
-    {"name":"Moldova, Republic of","capital":"Chisinau"},
+    {"name":"Micronesia","capital":"Palikir"},
+    {"name":"Moldova","capital":"Chisinau"},
     {"name":"Monaco","capital":"Monaco"},
     {"name":"Mongolia","capital":"Ulaanbaatar"},
     {"name":"Montenegro","capital":"Podgorica"},
@@ -145,7 +145,7 @@ let countries = [
     {"name":"Portugal","capital":"Lisbon"},
     {"name":"Qatar","capital":"Doha"},
     {"name":"Romania","capital":"Bucharest"},
-    {"name":"Russian Federation","capital":"Moscow"},
+    {"name":"Russia","capital":"Moscow"},
     {"name":"Rwanda","capital":"Kigali"},
     {"name":"Saint Kitts and Nevis","capital":"Basseterre"},
     {"name":"Saint Lucia","capital":"Castries"},
@@ -175,7 +175,7 @@ let countries = [
     {"name":"Syria","capital":"Damascus"},
     {"name":"Taiwan","capital":"Taipei"},
     {"name":"Tajikistan","capital":"Dushanbe"},
-    {"name":"Tanzania, United Republic of","capital":"Dodoma"},
+    {"name":"Tanzania","capital":"Dodoma"},
     {"name":"Thailand","capital":"Bangkok"},
     {"name":"Timor-Leste","capital":"Dili"},
     {"name":"Togo","capital":"Lome"},
@@ -206,10 +206,12 @@ export function capitalsPage(){
     root.replaceChildren();
     root.appendChild(capitalsDiv);
 
+
     capitalsDiv.innerHTML = `
     <h3 id = "name"></h3>
     <input id = "capitalInput"></input>
     <span id = "streak">Streak: 0</span>`;
+
 
     let streak = 0;
 
@@ -218,7 +220,7 @@ export function capitalsPage(){
     function eventListener(){
         let country = countries[Math.floor(Math.random() * countries.length)];
 
-        document.getElementById("name").innerText = `What is the capital of ${country.name}`;
+        document.getElementById("name").innerText = `What is the capital of ${country.name}?`;
         document.getElementById("streak").innerText = `Streak: ${streak}`;
 
 
