@@ -206,7 +206,7 @@ export function flagsabcdPage(){
     root.appendChild(capitalsDiv);
 
     capitalsDiv.innerHTML = `
-    <div style='color: rgb(51,119,255)'>
+    <div style='color: rgb(100,100,185); display:block; text-align:center'>
     <h3 id = "name"></h3>
     <div>
     <button id = "flag1"><img id='flagimg1'/></button>
@@ -214,7 +214,7 @@ export function flagsabcdPage(){
     <button id = "flag3"><img id='flagimg3'/></button>
     <button id = "flag4"><img id='flagimg4'/></button>
     </div>
-    <div id = "streak">Streak: 0</div>
+    <div id = "streak" style='margin-top:10px;display:block'>Streak: 0</div>
     </div>`;
 
     let streak = 0;

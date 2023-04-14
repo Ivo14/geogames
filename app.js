@@ -8,6 +8,9 @@ import { maplocationPage } from "./views/maplocation.js"
 import { scramblePage } from "./views/scramble.js"
 import { hangmanPage } from "./views/hangman.js"
 import { trueorfalsePage } from "./views/trueorfalse.js"
+import { checkAppearance } from "./utility/appearance.js";
+
+page('/index.html','/');
 page('/',homePage);
 page('/capitals',capitalsPage);
 page('/flags',flagsPage)
@@ -17,4 +20,16 @@ page('/maplocation',maplocationPage)
 page('/scramble',scramblePage)
 page('/hangman',hangmanPage)
 page('/trueorfalse',trueorfalsePage)
+
+if(localStorage.darkTheme){
+    document.getElementById("appearance").textContent = "☀";
+}
+else{
+    document.getElementById("appearance").textContent = "☽";
+}
+
 page.start();
+
+checkAppearance();
+
+//TODO: Finish appearance

@@ -208,9 +208,18 @@ export function maplocationPage(){
     root.appendChild(maplocationDiv);
 
     maplocationDiv.innerHTML = `
-    <img id='maplocation' style="width: 300px; height: 300px;border-radius: 5px; margin-top: 3px" />
-    <input id = "maplocationInput"></input>
-    <span id = "streak">Streak: 0</span>`;
+    <div style='margin-top:20px; display: flex; margin-left:auto; margin-right:auto; width: 400px'>
+    <img id='maplocation' style="width: 400px; height: 400px;border-radius: 5px; margin-top: 3px;" />
+    </div>
+    <div style="display:block; margin-left:auto; margin-right:auto; width: 300px; text-align:center">
+    <div>
+    <input style="margin-top:15px;"id = "maplocationInput"></input>
+    </div>
+    <div style="margin-top:10px;">
+    <span id = "streak" style="color:rgb(100, 100, 185)">Streak: 0</span>
+    </div>
+    </div>
+    `;
 
     let streak = 0;
 

@@ -162,16 +162,8 @@ let facts = [{text:'Vatican City is the smallest country of Europe.', trueorfals
              {text:'French is known in the world today as the love language.',trueorfalse:'true'},
              {text:'South Africa has 5 official languages.',trueorfalse:'false'},
              {text:'English has the shortest grammatically correct sentence.',trueorfalse:'true'},
-             {text:'North Korea and South Korea speak different languages.',trueorfalse:'true'},
-             /*{text:'',trueorfalse:'true'},
-             {text:'',trueorfalse:'true'},
-             {text:'',trueorfalse:'true'},*/
+             {text:'North Korea and South Korea speak different languages.',trueorfalse:'true'}
             ];
-
-
-
-
-
 
 
 const mainDiv = document.createElement('div');
@@ -180,10 +172,12 @@ export function trueorfalsePage(){
     root.appendChild(mainDiv);
 
     mainDiv.innerHTML = `
+    <div style='color: rgb(100,100,185); display:block; text-align:center'>
     <h3 id = "name"></h3>
     <button id="green";>True</button>
     <button id="red";>False</button>
-    <span id = "streak">Streak: 0</span>`;
+    <span id = "streak" style='margin-top:10px;display:block'>Streak: 0</span>
+    </div>`;
 
     let streak = 0;
 
@@ -201,11 +195,11 @@ export function trueorfalsePage(){
         newfact();
         green.onclick = () => {
           if(currentfact.trueorfalse=='true'){
-           streak++;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='black'; newfact();
+           streak++;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='rgb(100,100,185)'; newfact();
         }else{streak=0;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='red'}}
         red.onclick = () => {
           if(currentfact.trueorfalse=='false'){
-           streak++;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='black'; newfact(); 
+           streak++;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='rgb(100,100,185)'; newfact(); 
           }
           else{streak=0;streakDiv.innerText=`Streak: ${streak}`;streakDiv.style.color='red'}
         }
