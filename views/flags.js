@@ -208,7 +208,8 @@ export function flagsPage(){
     root.appendChild(capitalsDiv);
 
     capitalsDiv.innerHTML = `
-    <div style='color: rgb(100,100,185); display:block; text-align:center'>
+    <link rel="stylesheet" href="../style/style.css">
+    <div class='center'>
     <h3 id = "name">Which country does this flag belong to?</h3>
     <img id = "flag" style='display: block;margin-left: auto; margin-right: auto;margin-bottom:10px;'/>
     <input id = "capitalInput"></input>

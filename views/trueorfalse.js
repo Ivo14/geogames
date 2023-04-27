@@ -172,7 +172,8 @@ export function trueorfalsePage(){
     root.appendChild(mainDiv);
 
     mainDiv.innerHTML = `
-    <div style='color: rgb(100,100,185); display:block; text-align:center'>
+    <link rel="stylesheet" href="../style/style.css">
+    <div class='center'>
     <h3 id = "name"></h3>
     <button id="green";>True</button>
     <button id="red";>False</button>
@@ -188,6 +189,21 @@ export function trueorfalsePage(){
         let streakDiv = document.getElementById('streak')
         let green = document.getElementById('green')
         let red = document.getElementById('red')
+        red.style.backgroundColor = 'rgb(102,127,255)'
+        red.style.borderStyle = 'solid';
+        red.style.borderWidth = '3px';
+        red.style.borderRadius = '4px';
+        red.style.borderColor = 'rgb(9, 9, 26)';
+        green.style.backgroundColor = 'rgb(102,127,255)'
+        green.style.borderStyle = 'solid';
+        green.style.borderWidth = '3px';
+        green.style.borderRadius = '4px';
+        green.style.borderColor = 'rgb(9, 9, 26)';
+        green.style.width = '100px';
+        red.style.width = '100px';
+        green.style.height = '30px';
+        red.style.height = '30px';
+
         let currentfact
         let newfact = () => {
         currentfact=facts[Math.floor(Math.random() * facts.length)]

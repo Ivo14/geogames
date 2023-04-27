@@ -206,13 +206,14 @@ export function flagsabcdPage(){
     root.appendChild(capitalsDiv);
 
     capitalsDiv.innerHTML = `
-    <div style='color: rgb(100,100,185); display:block; text-align:center'>
+    <link rel="stylesheet" href="../style/style.css">
+    <div class='center'>
     <h3 id = "name"></h3>
-    <div>
-    <button id = "flag1"><img id='flagimg1'/></button>
-    <button id = "flag2"><img id='flagimg2'/></button>
-    <button id = "flag3"><img id='flagimg3'/></button>
-    <button id = "flag4"><img id='flagimg4'/></button>
+    <div style='align-items: center;justify-content: center;display:flex'>
+    <div style='margin-right: 10px; margin-left: 10px' id = "flag1"><img id='flagimg1'/></div>
+    <div style='margin-right: 10px; margin-left: 10px' id = "flag2"><img id='flagimg2'/></div>
+    <div style='margin-right: 10px; margin-left: 10px' id = "flag3"><img id='flagimg3'/></div>
+    <div style='margin-right: 10px; margin-left: 10px' id = "flag4"><img id='flagimg4'/></div>
     </div>
     <div id = "streak" style='margin-top:10px;display:block'>Streak: 0</div>
     </div>`;
@@ -224,9 +225,9 @@ export function flagsabcdPage(){
     function eventListener(){
         let country = countries[Math.floor(Math.random() * countries.length)];
         let wrongCountryArr = [];
-        wrongCountryArr[0] = countries[Math.floor(Math.random() * countries.length)];
-        wrongCountryArr[1] = countries[Math.floor(Math.random() * countries.length)];
-        wrongCountryArr[2] = countries[Math.floor(Math.random() * countries.length)];
+        do {wrongCountryArr[0] = countries[Math.floor(Math.random() * countries.length)];}while(wrongCountryArr[0].name==country.name)
+        do {wrongCountryArr[1] = countries[Math.floor(Math.random() * countries.length)];}while(wrongCountryArr[1].name==country.name || wrongCountryArr[1].name==wrongCountryArr[0].name)
+        do {wrongCountryArr[2] = countries[Math.floor(Math.random() * countries.length)];}while(wrongCountryArr[2].name==country.name || wrongCountryArr[1].name==wrongCountryArr[2].name || wrongCountryArr[2].name==wrongCountryArr[0].name)
 
         let correctCountryPosition = Math.ceil(Math.random() * 4)
         let wrongArr = [1,2,3,4]

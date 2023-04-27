@@ -9,7 +9,8 @@ export function hangmanPage(){
     root.appendChild(scrambleDiv);
     let streak = 0;
     scrambleDiv.innerHTML = `
-    <div style='color: rgb(100,100,185); display:block; text-align:center'>
+    <link rel="stylesheet" href="../style/style.css">
+    <div class='center'>
     <h3 id = "name"></h3>
     <input id = "hangmanInput"></input>
     <span id = "streak" style='margin-top:10px;display:block'>Streak: ${streak}</span>

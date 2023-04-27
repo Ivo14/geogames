@@ -7,7 +7,8 @@ export function descriptionPage(){
     root.appendChild(descriptionDiv);
 
     descriptionDiv.innerHTML = `
-    <div style='color: rgb(100,100,185); display:block; text-align:center''>
+    <link rel="stylesheet" href="../style/style.css">
+    <div class='center'>
     <h3 id = "name"></h3>
     <input id = "descriptionInput"></input>
     <span id = "streak" style='margin-top:10px;display:block'>Streak: 0</span>

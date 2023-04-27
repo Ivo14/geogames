@@ -2,8 +2,8 @@ import { html, render } from "../node_modules/lit-html/lit-html.js";
 import { changeAppearance } from "../utility/appearance.js";
 const root = document.getElementById('root');
 
-const geographyArray = [['Capitals',"../images/capitals.png","capitals"], ['Flags',"../images/flags.png","flags"],['Flagsabcd',"../images/flags.png","flagsabcd"], ['Description',"../images/description.png","description"], ['Scramble',"../images/scramble.png","scramble"], ['True or false',"../images/trueorfalse.png","trueorfalse"], ['Hangman',"../images/hangman.png","hangman"], ['Map Location',"../images/maplocation.png","maplocation"]];
-const otherArray = [['Tic Tac Toe',"../images/ttt.png","ttt"], ['Connect4',"../images/connect4.png","connect4"], ['Questions',"../images/questions.png","questions"], ['Typeracer',"../images/typeracer.png","typeracer"]];
+const geographyArray = [['Capitals',"../images/capitals.png","capitals"], ['Flags',"../images/flags.png","flags"],['Flags ABCD',"../images/flags.png","flagsabcd"], ['Description',"../images/description.png","description"], ['Scramble',"../images/scramble.png","scramble"], ['True or false',"../images/trueorfalse.png","trueorfalse"], ['Hangman',"../images/hangman.png","hangman"], ['Map Location',"../images/maplocation.png","maplocation"]];
+const otherArray = [['Tic Tac Toe',"../images/ttt.png","ttt"], ['Questions',"../images/questions.png","questions"],['Words',"../images/words.png","words"]];
 
 const appearence = {
   ligthTheme: [],

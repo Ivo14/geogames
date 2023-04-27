@@ -9,6 +9,9 @@ import { scramblePage } from "./views/scramble.js"
 import { hangmanPage } from "./views/hangman.js"
 import { trueorfalsePage } from "./views/trueorfalse.js"
 import { checkAppearance } from "./utility/appearance.js";
+import { tttPage } from "./views/ttt.js"
+import { questionsPage } from "./views/questions.js";
+import { wordsPage } from "./views/words.js";
 
 page('/index.html','/');
 page('/',homePage);
@@ -20,7 +23,9 @@ page('/maplocation',maplocationPage)
 page('/scramble',scramblePage)
 page('/hangman',hangmanPage)
 page('/trueorfalse',trueorfalsePage)
-
+page('/ttt',tttPage)
+page('/questions',questionsPage);
+page('/words',wordsPage);
 if(localStorage.darkTheme){
     document.getElementById("appearance").textContent = "☀";
 }
